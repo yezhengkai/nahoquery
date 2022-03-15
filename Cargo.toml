@@ -1,0 +1,22 @@
+[package]
+name = "nahoquery"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# Date and Time for Rust
+chrono = "0.4.19"
+# Command Line Argument Parser for Rust
+clap =  { version = "3.1.6", features = ["derive"] }
+# An ergonomic, batteries-included HTTP Client for Rust.
+reqwest = { version = "0.11", features = ["json"] }
+# A runtime for writing reliable, asynchronous, and slim applications with the Rust programming language.
+tokio = { version = "1", features = ["full"] }
+# Serializing and deserializing Rust data structures
+serde = { version = "1.0", features = ["derive"] }
+# Each data format lives in its own crate; the sample code below uses JSON
+# but you may be using a different one.
+serde_json = "1.0"
+serde_urlencoded = "0.7"
