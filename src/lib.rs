@@ -1,7 +1,7 @@
-use chrono::{TimeZone};
+use chrono::TimeZone;
 
-pub const GET_VARS_URL: &str = "http://140.115.35.136:8044/cgi-bin/getVars.py";
-pub const DOWNLOAD_URL: &str = "http://140.115.35.136:8044/cgi-bin/download.py";
+const GET_VARS_URL: &str = "http://140.115.35.136:8044/cgi-bin/getVars.py";
+const DOWNLOAD_URL: &str = "http://140.115.35.136:8044/cgi-bin/download.py";
 
 fn _get_headers() -> reqwest::header::HeaderMap {
     let mut headers = reqwest::header::HeaderMap::new();
@@ -20,12 +20,12 @@ pub async fn get_vars(
 ) -> Result<String, reqwest::Error> {
     // parse start_time and end_time
     let start_time = chrono::Utc
-        .datetime_from_str(start_time, "%Y-%m-%d %H:%M")
+        .datetime_from_str(start_time, "%Y-%m-%dT%H:%M")
         .unwrap()
         .format("%Y-%m-%dT%H:%M:%S")
         .to_string();
     let end_time = chrono::Utc
-        .datetime_from_str(end_time, "%Y-%m-%d %H:%M")
+        .datetime_from_str(end_time, "%Y-%m-%dT%H:%M")
         .unwrap()
         .format("%Y-%m-%dT%H:%M:%S")
         .to_string();
@@ -59,12 +59,12 @@ pub async fn download(
 ) -> Result<String, reqwest::Error> {
     // parse start_time and end_time
     let start_time = chrono::Utc
-        .datetime_from_str(start_time, "%Y-%m-%d %H:%M")
+        .datetime_from_str(start_time, "%Y-%m-%dT%H:%M")
         .unwrap()
         .format("%Y-%m-%dT%H:%M:%S")
         .to_string();
     let end_time = chrono::Utc
-        .datetime_from_str(end_time, "%Y-%m-%d %H:%M")
+        .datetime_from_str(end_time, "%Y-%m-%dT%H:%M")
         .unwrap()
         .format("%Y-%m-%dT%H:%M:%S")
         .to_string();
