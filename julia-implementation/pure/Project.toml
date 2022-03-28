@@ -1,0 +1,7 @@
+name = "NAHOQuery"
+uuid = "3ba8ebb4-aed9-487d-8c2f-d1294000ab01"
+authors = ["Zheng-Kai Ye <supon3060@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Comonicon = "863f3e99-da2a-4334-8734-de3dacbe5542"
