@@ -13,6 +13,7 @@ fn _get_headers() -> reqwest::header::HeaderMap {
     return headers;
 }
 
+//  TODO: URL encoding
 pub async fn get_vars(
     start_time: &str,
     end_time: &str,
